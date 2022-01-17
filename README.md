@@ -8,7 +8,7 @@
 
 ### us_visualisation - contains files to convert raw ultrasound data to 2d images 
 
-### robot_movemnt  - contains files to move the UR3 robot in staright lines to aquire data 
+### robot_movemnt  - contains files to move the UR3 robot in straight lines to aquire data 
 
 ### zWirePhantom - Contains files to create point cloud model of the wire phantom and generate csv file 
 
