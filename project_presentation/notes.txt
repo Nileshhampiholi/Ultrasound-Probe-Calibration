@@ -1,0 +1,168 @@
+Slide 1 - Project name 
+
+Good evening every one. My topic for the project arebiet is Robot Guided Ultrasound Probe caliberation and volume scanning.
+
+
+
+Silde 2 - Project overview 
+THIS  ARBEIT IS PART OF THE PROJET - 
+Let me start by giving  a breif overview of the whole project and then talk about the parts I am working on in Detail
+
+
+This is divided into sub module which are ......read slides 
+
+I am working o Caliberation of lInear probe  and augementation of 2d scans to 3d volume.  
+
+
+ 
+
+Slide 3 - Motivation and goals
+
+Guided interventions are a way to help physicain  virtually visualise the target in surgical sight for needle insertions or 
+isualisepath way for an aspiration.
+
+Exisiting solution concentrate on free hand probe caliberation using external trackers and cameras. 
+
+
+In order to enable guided assistance US volume has to be scanned and trasfromed in meaning full way which requires the postion of 
+the probe to be known with respect to world cordinates.
+
+Position can determined by Caliberation.
+
+After caliberation 2d scans can be agumented into 3d volume.
+
+
+Slide 4 - Methodology 
+
+Lets dicuss the work flow the project. 
+
+I  started with the  design of caliberation phantom ( z wire or n wire phantom )
+
+Aquire Images of the caliberation phantom 
+
+Segment the aquired images 
+
+Extract markers  from segmented images
+
+Estimate the pose 
+
+Caliberate the probe 
+
+Agumentation 
+
+
+
+Slide 5 - Hand eye caliberation
+
+This is the basic overview of the hand eye calibration 
+A = is obtained by forward kinematics  (TF from robot base to end effector)
+
+B = TF from phantom cordinate frame to US probe Cordinate from 
+
+X = TF from robot end effector to US probe 
+
+
+Slide 6 - Design of Calibration phantom
+
+I designed the phantom  in fusion 360 and printed it using 3d printer. 
+
+Its  10 cms in height 15 cms in width and 10 cms in height
+
+The holes are 10mm apart in both directons 
+
+Using a fishing wire to create the n or z shape. As the wire due to its properties can be easily. 
+
+I am using 4 layers with 3 in same direction and 4 in different direction
+
+
+I created a point cloud model imitating the same. 
+
+
+
+Slide 7 - data aquitision and segmentation 
+
+Capturing US images can be quite challeing. As it is very sensitive. 
+
+Airbubble and bust particles are external problems. 
+Also the base while capturing should be a matrial that desnt not reflect sound much. 
+
+Shown is the 1st capture the base and instersection of wire with imae plane is seen 
+
+
+After playing with the parameters in the supra interface I was able to obtain clean images that are easy to segment. 
+(Parameters to control the witdth of the beam that is emmitted and also to what depth)  
+
+Still is it chanllenging to segment the markers that are close to each other.
+
+I applied 
+
+Median filter and Noise removal by filtering groups of 10 or less pixels and then morphoogial operation this helps
+ to seprate blobs close to each other 
+
+(median filter - removes noise by averaging with pixels in the neighbor hood  I used kernel size of 7)
+
+
+
+I obatined good results as shown in the next slide 
+
+
+
+Slide -8  Marker extraction 
+
+To extract the marker points I used the matlab vision toolbox and used the built in functions 
+
+
+Also I used kmeans algorithm to identify 12 clusters and provide centriod of the clusters 
+
+Both methods leads to almost same results.
+
+
+Slide 9  - Pose Estimation 
+
+This is the most challenging part of the Caliberation process. 
+
+Find a trasfrom from the wire phantom to the US Probe frame 
+
+
+The images obatined are in 2d and represent only one x-y plane of the phantom. 
+
+
+These markers are to be  mappped or registered to 3d phantom. 
+
+The structure of the wire phantom can be exploited here. 
+Available distance ratios match the markers to the phantom. 
+
+I am currently iterating one plane of phantom and matching the points and computing the trasfrom and estimate the mean error. 
+
+As long as the error is decreasing iterations continue if the error increases from previos iteration the loop stops 
+
+I able to to achinve mean estimation error of the 0.76mm
+
+
+Slide 10 - Pose estimation results 
+
+Here we can see the markers captured from US probe are trasformed to match the phantom.  
+
+This trasfromation can be used to perform hand eye calibration. 
+
+
+
+Slide 11 - upcoming taskes 
+
+In the future i will work twards solving the hand eye problem and and obatin 3d volume by scanning the show object. 
+
+
+
+Slide 12 
+
+
+Thank you. If you have any questions or suggestions I would be pleased 
+
+
+
+
+
+
+
+
+
