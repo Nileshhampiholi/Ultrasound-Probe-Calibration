@@ -1,0 +1,18 @@
+Overall Transformation: 
+Mean translation error: 0.8178 mm
+Mean translation error after orthonormalization: 4.081 mm
+Mean rotation error: 9.4777 degrees
+Mean rotation error after orthonormalization: 12.4308 degrees
+Mean Fro. Norm: 1.5462
+Mean Fro. Norm after orthonormalization: 4.2358
+
+
+
+1
+Overall Transformation: 
+Mean translation error: 0.93658 mm
+Mean translation error after orthonormalization: 4.1932 mm
+Mean rotation error: 9.67 degrees
+Mean rotation error after orthonormalization: 12.3538 degrees
+Mean Fro. Norm: 1.5728
+Mean Fro. Norm after orthonormalization: 4.3101
