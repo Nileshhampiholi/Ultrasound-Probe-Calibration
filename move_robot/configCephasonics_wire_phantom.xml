@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<supra_config>
+    <devices>
+        <inputs>
+            <input type="UltrasoundInterfaceCephasonicsCC" id="US-Cep">
+                <param name="antiAliasingFilterFrequency" type="double">15</param>
+                <param name="apertureSizeX" type="uint32_t">0</param>
+                <param name="apertureSizeY" type="uint32_t">0</param>
+                <param name="decimation" type="uint32_t">1</param>
+                <param name="decimationFilterBypass" type="bool">1</param>
+                <param name="endDepth" type="double">55</param>
+                <param name="highPassFilterBypass" type="bool">0</param>
+                <param name="inputImpedance" type="double">200</param>
+                <param name="lowNoiseAmplifierGain" type="double">18</param>
+                <param name="measureThroughput" type="bool">0</param>
+                <param name="numSamplesRecon" type="uint32_t">2000</param>
+                <param name="numScanlinesX" type="uint32_t">128</param>
+                <param name="numScanlinesY" type="uint32_t">1</param>
+                <param name="probeName" type="string">CPLA12875</param>
+                <param name="rxModeActive" type="bool">1</param>
+                <param name="rxScanlineSubdivisionX" type="uint32_t">4</param>
+                <param name="rxScanlineSubdivisionY" type="uint32_t">1</param>
+                <param name="scanType" type="string">linear</param>
+                <param name="sequenceNumFrames" type="uint32_t">1</param>
+                <param name="speedOfSound" type="double">1540</param>
+                <param name="startDepth" type="double">15</param>
+                <param name="systemTxClock" type="uint32_t">40</param>
+                <param name="tgc0" type="double">10</param>
+                <param name="tgc1" type="double">10</param>
+                <param name="tgc2" type="double">10</param>
+                <param name="tgc3" type="double">10</param>
+                <param name="tgc4" type="double">10</param>
+                <param name="tgc5" type="double">10</param>
+                <param name="tgc6" type="double">10</param>
+                <param name="tgc7" type="double">10</param>
+                <param name="tgc8" type="double">10</param>
+                <param name="tgc9" type="double">10</param>
+                <param name="txApertureSizeX" type="uint32_t">32</param>
+                <param name="txApertureSizeY" type="uint32_t">1</param>
+                <param name="txCorrectMatchingLayers" type="bool">1</param>
+                <param name="txDutyCycle" type="double">1</param>
+                <param name="txFocusActive" type="bool">1</param>
+                <param name="txFocusDepth" type="double">30</param>
+                <param name="txFocusWidth" type="double">0</param>
+                <param name="txFrequency" type="double">5</param>
+                <param name="txNumCyclesCephasonics" type="uint32_t">1</param>
+                <param name="txNumCyclesManual" type="uint32_t">1</param>
+                <param name="txPulseInversion" type="bool">0</param>
+                <param name="txPulseRepeatFiring" type="uint32_t">1</param>
+                <param name="txPulseRepetitionFrequency" type="double">0</param>
+                <param name="txPulseType" type="string">bipolar</param>
+                <param name="txSectorAngleX" type="double">0</param>
+                <param name="txSectorAngleY" type="double">0</param>
+                <param name="txSteeringAngleX" type="double">0</param>
+                <param name="txSteeringAngleY" type="double">0</param>
+                <param name="txVoltage" type="double">60</param>
+                <param name="txWindowParameter" type="double">0</param>
+                <param name="txWindowType" type="string">Hamming</param>
+                <param name="writeMockData" type="bool">0</param>
+                <param name="highPassFilterFrequency" type="double">0.898</param>
+                <param name="mockDataFilename" type="string"></param>
+            </input>
+        </inputs>
+        <outputs>
+            <output type="MetaImageOutputDevice" id="MHD">
+                <param name="active" type="bool">1</param>
+                <param name="createSequences" type="bool">1</param>
+                <param name="filename" type="string">beamformed</param>
+                <param name="maxElements" type="uint32_t">5</param>
+                <param name="writeMockData" type="bool">0</param>
+                <param name="mockDataFilename" type="string"></param>
+                <param name="writeBufferSizeGB" type="float">4</param>
+            </output>
+        </outputs>
+        <nodes>
+            <node type="BeamformingNode" id="BEAM">
+                <param name="additionalOffset" type="int32_t">0</param>
+                <param name="beamformerType" type="string">DelayAndSum</param>
+                <param name="fNumber" type="double">1</param>
+                <param name="interpolateTransmits" type="bool">0</param>
+                <param name="outputType" type="DataType">float</param>
+                <param name="speedOfSound" type="double">1540</param>
+                <param name="windowParameter" type="double">0</param>
+                <param name="windowType" type="string">Hamming</param>
+            </node>
+            <node type="IQDemodulatorNode" id="DEMO">
+                <param name="bandwidth" type="double">3e+06</param>
+                <param name="bandwidthAdd0" type="double">3e+06</param>
+                <param name="bandwidthAdd1" type="double">1e+06</param>
+                <param name="bandwidthAdd2" type="double">1e+06</param>
+                <param name="bandwidthAdd3" type="double">1e+06</param>
+                <param name="bandwidthAdd4" type="double">1e+06</param>
+                <param name="decimation" type="uint32_t">1</param>
+                <param name="outputType" type="DataType">float</param>
+                <param name="referenceFrequency" type="double">7e+06</param>
+                <param name="referenceFrequencyAdd0" type="double">6</param>
+                <param name="referenceFrequencyAdd1" type="double">7</param>
+                <param name="referenceFrequencyAdd2" type="double">6e+06</param>
+                <param name="referenceFrequencyAdd3" type="double">8e+06</param>
+                <param name="referenceFrequencyAdd4" type="double">5</param>
+                <param name="weight" type="double">1</param>
+                <param name="weightAdd0" type="double">1</param>
+                <param name="weightAdd1" type="double">1</param>
+                <param name="weightAdd2" type="double">1</param>
+                <param name="weightAdd3" type="double">1</param>
+                <param name="weightAdd4" type="double">0</param>
+            </node>
+            <node type="TemporalFilterNode" id="FILT">
+                <param name="numImages" type="uint32_t">3</param>
+                <param name="outputType" type="DataType">float</param>
+            </node>
+            <node type="LogCompressorNode" id="LOGC">
+                <param name="dynamicRange" type="double">40</param>
+                <param name="gain" type="double">1</param>
+                <param name="inMax" type="double">1024</param>
+                <param name="outputType" type="DataType">float</param>
+            </node>
+            <node type="Preview SCAN0" id="PREV_SCAN_0"/>
+            <node type="ScanConverterNode" id="SCAN">
+                <param name="imageResolutionForced" type="bool">0</param>
+                <param name="outputType" type="DataType">float</param>
+                <param name="imageResolution" type="double">0.1</param>
+            </node>
+        </nodes>
+    </devices>
+    <connections>
+        <connection>
+            <from id="BEAM" port="0"/>
+            <to id="DEMO" port="0"/>
+        </connection>
+        <connection>
+            <from id="DEMO" port="0"/>
+            <to id="FILT" port="0"/>
+        </connection>
+        <connection>
+            <from id="FILT" port="0"/>
+            <to id="LOGC" port="0"/>
+        </connection>
+        <connection>
+            <from id="LOGC" port="0"/>
+            <to id="SCAN" port="0"/>
+        </connection>
+        <connection>
+            <from id="SCAN" port="0"/>
+            <to id="MHD" port="0"/>
+        </connection>
+        <connection>
+            <from id="SCAN" port="0"/>
+            <to id="PREV_SCAN_0" port="0"/>
+        </connection>
+        <connection>
+            <from id="US-Cep" port="0"/>
+            <to id="BEAM" port="0"/>
+        </connection>
+    </connections>
+</supra_config>
