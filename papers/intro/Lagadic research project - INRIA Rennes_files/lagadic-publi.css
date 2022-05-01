@@ -1,0 +1,28 @@
+
+.BibAuthor{}
+
+.BibInProceedingsTitle{ font-weight: bold ;  }
+.BibInProceedingsBooktitle{ font-style: italic ; }
+
+.BibJournalTitle{ font-weight: bold ;}
+.BibJournal{  font-style: italic ; }
+
+.BibBookTitle{ font-weight: bold ; }
+.BibPublisher{  font-style: italic ; }
+
+.BibProceedingsTitle{ font-weight: bold ; }
+
+.BibInBookTitle{ font-weight: bold ; }
+.BibInBookBooktitle{ font-style: italic;  }
+
+.BibPhDThesisTitle{ font-weight: bold ; }
+.BibPhDThesisSchool{font-style: italic;}
+
+.BibMiscTitle{ font-weight: bold ; }
+.BibMiscBookTitle{  font-style: italic;}
+.BibMiscHowpublished{ font-style: italic;}
+
+.BibTechReportTitle{ font-weight: bold ;}
+.BibTechReportInstitution{  font-style: italic;}
+
+.BibCopyright{font-style: italic}

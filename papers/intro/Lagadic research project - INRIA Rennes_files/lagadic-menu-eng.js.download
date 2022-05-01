@@ -1,0 +1,135 @@
+oM=new makeCM("oM");
+
+ oM.resizeCheck=1; oM.rows=40; 
+
+var currentURL = document.location.href;
+if(currentURL.match(/irisa\.fr/gi)){
+oM.onlineRoot="http://www.irisa.fr/lagadic";
+}
+else
+{
+oM.onlineRoot="http://team.inria.fr/lagadic";
+}
+
+oM.offlineRoot="file:///udd/marchand/www/lagadic";
+
+oM.pxBetween =0; 
+oM.fillImg="images/cm_fill.gif"; 
+oM.fromTop=50; oM.fromLeft=155; oM.wait=300; oM.zIndex=400;
+oM.useBar=0; oM.barWidth="100%"; oM.barHeight="menu"; oM.barX=0;oM.barY="menu"; oM.barClass="clBar";
+oM.barBorderX=0; oM.barBorderY=0;
+
+
+oM.level[0]=new cm_makeLevel(100,21,"clT","clTover",1,1,"clB",0,"bottom",0,0,0,0,0);
+oM.level[1]=new cm_makeLevel(102,22,"clS","clSover",1,1,"clB",0,"right",0,0,"",10,10);
+oM.level[2]=new cm_makeLevel(90,22,"clS2","clS2over",1,1,"clB",0,"right",0,0,"",10,10);
+oM.level[3]=new cm_makeLevel(140,22);
+
+
+/* ---------------------------------------------------
+   First level menu
+   ---------------------------------------------------
+*/
+
+oM.makeMenu('m1','','Home','/welcome.html');
+oM.makeMenu('m4','','People','/team-eng.html');
+oM.makeMenu('m5','','Publications','/publi-eng.html');
+oM.makeMenu('m2','','Demonstrations','/demo.html','',150,0);
+oM.makeMenu('m3','','Softwares','/software-eng.html');
+oM.makeMenu('m6','','Positions','/positions-eng.html');
+oM.makeMenu('m7','','Misc.','');
+
+
+/* ---------------------------------------------------
+   Sous Menu Presentation 
+   ---------------------------------------------------*/
+oM.makeMenu('m12','m1','Research areas','/research-eng.html','',150,0);
+oM.makeMenu('m13','m1','Projects','/projects.html','',150,0);
+oM.makeMenu('m17','m1','Robotics platforms','/material/material-eng.html','',150,0);
+oM.makeMenu('m15','m1','Photos','/images/photo-eng.html','',150,0);
+oM.makeMenu('m16','m1','Videos','/video-eng.html','',150,0);
+
+
+
+oM.makeMenu('m31','m3','ViSP','/visp/visp.html');
+oM.makeMenu('m34','m3','Bib2html','http://www.irisa.fr/lagadic/soft/bib2html/bib2html.html');
+
+
+
+oM.makeMenu('m21','m2','Visual servoing','/demo.html#visual-servoing','',170,0);
+oM.makeMenu('m25','m2','Visual navigation','/demo.html#visual-navigation','',170,0);
+oM.makeMenu('m23','m2','Computer vision and tracking','/demo.html#tracking','',170,0);
+oM.makeMenu('m24','m2','Medical robotics','/demo.html#echo','',170,0);
+oM.makeMenu('m22','m2','Augmented reality','/demo.html#ar','',170,0);
+
+
+
+/* ---------------------------------------------------
+   Sous Menu People 
+   ---------------------------------------------------*/
+oM.makeMenu('m41','m4','Researchers','/team-eng.html','',120,0);
+oM.makeMenu('m42','m4','Engineers','/team-eng.html#engineers','',120,0);
+oM.makeMenu('m43','m4','Assistant','/team-eng.html#assistant','',120,0);
+oM.makeMenu('m44','m4','PhD Students','/team-eng.html#phdstudents','',120,0);
+oM.makeMenu('m45','m4','Post Doc and Ater','/team-eng.html#postdoc','',120,0);
+
+
+oM.makeMenu('m46','m4','Junior technical staff','/team-eng.html#ing-expert','',120,0);
+oM.makeMenu('m47','m4','Alumni','/team-eng.html#formerstudents','',120,0);
+
+
+oM.makeMenu('m410','m41','M. Babel','/team/Marie.Babel-eng.html','',105,0);
+oM.makeMenu('m411','m41','F. Chaumette','/team/Francois.Chaumette-eng.html','',105,0);
+oM.makeMenu('m412','m41','V. Drevelle','/team/Vincent.Drevelle-eng.html','',105,0);
+oM.makeMenu('m413','m41','A. Krupa','/team/Alexandre.Krupa-eng.html','',105,0); 
+oM.makeMenu('m414','m41','E. Marchand','/team/Eric.Marchand-eng.html','',105,0);
+oM.makeMenu('m415','m41','P. Rives','/team/Patrick.Rives-eng.html','',105,0);
+oM.makeMenu('m416','m41','P. Robuffo Giordano','/team/Paolo.Robuffo_Giordano.html','',105,0);
+oM.makeMenu('m417','m41','P. Salaris','/team/Paolo.Salaris.html','',105,0);
+
+oM.makeMenu('m421','m42','F. Spindler','/team/Fabien.Spindler-eng.html');
+oM.makeMenu('m431','m43','C. Gharsalli','/team/Celine.Ammoniaux-eng.html');
+
+
+/* ---------------------------------------------------
+   Sous Menu Publication 
+   ---------------------------------------------------*/
+oM.makeMenu('m51','m5','Complete Lists','/publi-eng.html','',140,0);
+oM.makeMenu('m52','m5','By authors','/publi-eng.html#auteur','',140,0);
+oM.makeMenu('m53','m5','Journal papers','/publi/category/Journal-eng.html','',140,0);
+oM.makeMenu('m54','m5','Conference papers','/publi/category/Conference-eng.html','',140,0);
+oM.makeMenu('m55','m5','Thesis','/publi/category/Theses-eng.html','',140,0);
+
+
+oM.makeMenu('m5200','m52','M. Babel','/publi/author/Marie.Babel-eng.html');
+oM.makeMenu('m5201','m52','F. Chaumette','/publi/author/Francois.Chaumette-eng.html');
+oM.makeMenu('m5207','m52','V. Drevelle','/publi/author/Vincent.Drevelle-eng.html');
+
+oM.makeMenu('m5202','m52','A. Krupa','/publi/author/Alexandre.Krupa-eng.html'); 
+oM.makeMenu('m5203','m52','E. Marchand','/publi/author/Eric.Marchand-eng.html');
+oM.makeMenu('m5204','m52','P. Rives','/publi/author/Patrick.Rives-eng.html');
+oM.makeMenu('m5206','m52','P. Robuffo','/publi/author/Paolo.RobuffoGiordano-eng.html');
+oM.makeMenu('m5208','m52','P. Salaris','/publi/author/Paolo.Salaris-eng.html');
+oM.makeMenu('m5205','m52','F. Spindler','/publi/author/Fabien.Spindler-eng.html');
+
+/* ---------------------------------------------------
+   Sous Menu Position
+   ---------------------------------------------------*/
+oM.makeMenu('m61','m6','Training','/positions-eng.html#training');
+oM.makeMenu('m62','m6','PhD','/positions-eng.html#phd');
+oM.makeMenu('m63','m6','Post-Doc','/positions-eng.html#postdoc');
+
+/* ---------------------------------------------------
+   Sous Menu divers
+   ---------------------------------------------------*/
+oM.makeMenu('m71','m7','About','/about-eng.html');
+oM.makeMenu('m72','m7','News','/news-eng.html');
+oM.makeMenu('m75','m7','Press','/presse-eng.html');
+oM.makeMenu('m73','m7','Activity reports','/ra-eng.html');
+oM.makeMenu('m74','m7','Facilities','/facilities-eng.html');
+
+
+var xoffset = 175 ;
+var avail="xoffset";
+oM.menuPlacement=new Array(xoffset,avail+"+50",avail+"+115",avail+"+210",avail+"+325",avail+"+400",avail+"+470")
+oM.construct()

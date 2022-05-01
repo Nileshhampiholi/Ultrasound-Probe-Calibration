@@ -1,0 +1,9 @@
+@-webkit-keyframes gradientShift {
+	0%   { background-position-x: 0px; }
+    100% { background-position-x: 120px; }
+}
+
+@-moz-keyframes gradientShift {
+	0%   { background-position: 0px 0; }
+    100% { background-position: 120px 0; }
+}

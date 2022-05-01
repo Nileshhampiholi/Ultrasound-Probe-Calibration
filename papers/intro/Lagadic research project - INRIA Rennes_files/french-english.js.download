@@ -1,0 +1,36 @@
+/************************************************************
+french-english.js -  Eric Marchand
+Creation: 16.11.03
+Last updated: 22.2.04
+
+v0.02 
+*************************************************************/
+str = document.URL ;
+re = /-fra.html/gi;
+if (str.search(re) !=-1)
+{	/* si l'url de la  page contient -fra 
+	   on affiche un lien vers la version anglaise */
+	newstr = str.replace(re,"-eng.html") ;
+	var destHREF = newstr ;
+	instr = "english version" ;
+	document.write('&nbsp;<br><table width="80%" border="0"><tr><td width="70%" align="right">&nbsp;' + instr.link(destHREF)+ '</td></tr></table>')
+
+}
+else 
+{
+	re = /-eng.html/gi;
+	if (str.search(re) !=-1)
+	{	/* si l'url de la  page contient -eng 
+		   on affiche un lien vers la version francaise */
+		newstr = str.replace(re,"-fra.html") ;
+		var destHREF = newstr ;
+		instr = "version française" ;
+		document.write('&nbsp;<br><table width="80%" border="0"><tr><td width="80%" align="right">&nbsp;' + instr.link(destHREF)+ '</td></tr></table>')
+	}
+	else
+	{
+		/* si l'url de la  page ne contient pas de -fra ou -eng 
+		   on affiche rien */
+		document.write('&nbsp;<br><table width="80%" border="0"><tr><td width="80%" align="right">&nbsp; </td></tr></table>')	
+	}
+}

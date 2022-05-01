@@ -1,0 +1,3 @@
+In addition, a PC
+workstation (Intel i7, CPU @2.6 GHz, 64G RAM) was used
+for data acquisition and processing in Ubuntu 16.04.
